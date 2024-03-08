@@ -57,7 +57,7 @@ const FormSchema = z.object({
   }),
 });
 
-export function startMigration() {
+export function StartMigration() {
   const [vendorName, setVendorName] = useState("");
   const [switchModel, setSwitchModel] = useState("");
 
