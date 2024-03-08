@@ -1,0 +1,21 @@
+.interface-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+}
+
+.interface-2{
+    padding: 3rem;
+    min-width: 40vw;
+    background-color: aliceblue;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.interface-3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

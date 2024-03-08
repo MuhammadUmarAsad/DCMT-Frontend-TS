@@ -1,5 +1,5 @@
 "use client";
-
+import './interface-mapping.css'
 import * as React from "react";
 import { useState } from "react";
 
@@ -269,7 +269,8 @@ export function InterfaceMappings() {
 
   return (
     // Assuming you have an array of interface names
-
+    <div className="interface-1">
+    <div className='interface-2'>
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         {interfaceNames.map((interfaceName, index) => (
@@ -401,32 +402,75 @@ export function InterfaceMappings() {
                                 );
                               }}
                             >
-                              {selectedInterface.label}
-                              <CheckIcon
-                                className={cn(
-                                  "ml-auto h-4 w-4",
-                                  selectedInterface.value === field.value
-                                    ? "opacity-100"
-                                    : "opacity-0"
-                                )}
-                              />
-                            </CommandItem>
-                          ))}
-                        </CommandGroup>
-                      </Command>
-                    </PopoverContent>
-                  </Popover>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-        ))}
+                              {field.value
+                                ? interfaces.find(
+                                    (selectedInterface) =>
+                                      selectedInterface.value === field.value
+                                  )?.label
+                                : "Select Interface"}
+                              <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                            </Button>
+                          </FormControl>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[200px] p-0">
+                          <Command>
+                            <CommandInput
+                              placeholder="Search interface..."
+                              className="h-9"
+                            />
+                            <CommandEmpty>No interface found.</CommandEmpty>
+                            <CommandGroup>
+                              {interfaces.map((selectedInterface) => (
+                                <CommandItem
+                                  value={selectedInterface.label}
+                                  key={selectedInterface.value}
+                                  onSelect={() => {
+                                    form.setValue(
+                                      interfaceName as
+                                        | "ethernet0"
+                                        | "ethernet4"
+                                        | "ethernet8"
+                                        | "ethernet12",
+                                      selectedInterface.value as
+                                        | "ethernet0"
+                                        | "ethernet4"
+                                        | "ethernet8"
+                                        | "ethernet12"
+                                    );
+                                    setEthernet(
+                                      interfaceName,
+                                      selectedInterface.value
+                                    );
+                                  }}
+                                >
+                                  {selectedInterface.label}
+                                  <CheckIcon
+                                    className={cn(
+                                      "ml-auto h-4 w-4",
+                                      selectedInterface.value === field.value
+                                        ? "opacity-100"
+                                        : "opacity-0"
+                                    )}
+                                  />
+                                </CommandItem>
+                              ))}
+                            </CommandGroup>
+                          </Command>
+                        </PopoverContent>
+                      </Popover>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+            ))}
 
-        <div className="flex justify-start">
-          <Button type="submit">Submit</Button>
-        </div>
-      </form>
-    </Form>
+            <div className="flex justify-start">
+              <Button type="submit">Submit</Button>
+            </div>
+          </form>
+        </Form>
+      </div>
+    </div>
   );
 }
