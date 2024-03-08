@@ -6,7 +6,9 @@ import { CardWithForm } from './jjs';
 import { StartMigration } from './layouts/start-migration';
 import { ProtocolSelection } from './layouts/protocol-selection';
 import { InterfaceMappings } from './layouts/interface-mappings';
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from './layouts/header';
 
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
 
   return (
     <>
-    {/* <Style/>     */}
+    <Header/>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<StartMigration/>} />

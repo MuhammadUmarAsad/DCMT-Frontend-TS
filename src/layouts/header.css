@@ -1,0 +1,21 @@
+.header-1{
+    background-color: #506C64 !important;
+    min-height: 7vh;
+    padding-left: 5rem;
+}
+.link{
+    color:aliceblue;
+}
+.link-1{
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.5rem;
+}
+
+.header-2{
+    display: flex;
+    align-items: flex-end;
+    margin-left: 60vw;
+}
