@@ -90,7 +90,7 @@ export function StartMigration() {
 
   return (
     <div className="migration-1">
-      <div className='migration-2'>
+      <div className="migration-2">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
@@ -257,7 +257,7 @@ export function StartMigration() {
             </div>
 
             <Button className="btn-1" type="submit">
-              Submit
+              <a href="/interface-mappings">Next</a>
             </Button>
           </form>
         </Form>

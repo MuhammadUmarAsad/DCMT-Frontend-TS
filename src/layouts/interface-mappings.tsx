@@ -270,137 +270,54 @@ export function InterfaceMappings() {
   return (
     // Assuming you have an array of interface names
     <div className="interface-1">
-    <div className='interface-2'>
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        {interfaceNames.map((interfaceName, index) => (
-          <div key={index} className="flex justify-start">
-            <FormField
-              control={form.control}
-              name={
-                interfaceName as
-                  | "ethernet0"
-                  | "ethernet4"
-                  | "ethernet8"
-                  | "ethernet12"
-                  | "ethernet16"
-                  | "ethernet20"
-                  | "ethernet24"
-                  | "ethernet28"
-                  | "ethernet32"
-                  | "ethernet36"
-                  | "ethernet40"
-                  | "ethernet44"
-                  | "ethernet48"
-                  | "ethernet52"
-                  | "ethernet56"
-                  | "ethernet60"
-                  | "ethernet64"
-                  | "ethernet68"
-                  | "ethernet72"
-                  | "ethernet76"
-                  | "ethernet80"
-                  | "ethernet84"
-                  | "ethernet88"
-                  | "ethernet92"
-                  | "ethernet96"
-              }
-              render={({ field }) => (
-                <FormItem className="flex flex-col">
-                  <FormLabel>ethernet1/1/{index}</FormLabel>
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant="outline"
-                          role="combobox"
-                          className={cn(
-                            "w-[400px] justify-between",
-                            !field.value && "text-muted-foreground"
-                          )}
-                        >
-                          {field.value
-                            ? interfaces.find(
-                                (selectedInterface) =>
-                                  selectedInterface.value === field.value
-                              )?.label
-                            : "Select Interface"}
-                          <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-[200px] p-0">
-                      <Command>
-                        <CommandInput
-                          placeholder="Search interface..."
-                          className="h-9"
-                        />
-                        <CommandEmpty>No interface found.</CommandEmpty>
-                        <CommandGroup>
-                          {interfaces.map((selectedInterface) => (
-                            <CommandItem
-                              value={selectedInterface.label}
-                              key={selectedInterface.value}
-                              onSelect={() => {
-                                form.setValue(
-                                    interfaceName as
-                                    | "ethernet0"
-                                    | "ethernet4"
-                                    | "ethernet8"
-                                    | "ethernet12"
-                                    | "ethernet16"
-                                    | "ethernet20"
-                                    | "ethernet24"
-                                    | "ethernet28"
-                                    | "ethernet32"
-                                    | "ethernet36"
-                                    | "ethernet40"
-                                    | "ethernet44"
-                                    | "ethernet48"
-                                    | "ethernet52"
-                                    | "ethernet56"
-                                    | "ethernet60"
-                                    | "ethernet64"
-                                    | "ethernet68"
-                                    | "ethernet72"
-                                    | "ethernet76"
-                                    | "ethernet80"
-                                    | "ethernet84"
-                                    | "ethernet88"
-                                    | "ethernet92"
-                                    | "ethernet96",
-                                  selectedInterface.value as
-                                    | "ethernet0"
-                                    | "ethernet4"
-                                    | "ethernet8"
-                                    | "ethernet12"
-                                    | "ethernet16"
-                                    | "ethernet20"
-                                    | "ethernet24"
-                                    | "ethernet28"
-                                    | "ethernet32"
-                                    | "ethernet36"
-                                    | "ethernet40"
-                                    | "ethernet44"
-                                    | "ethernet48"
-                                    | "ethernet52"
-                                    | "ethernet56"
-                                    | "ethernet60"
-                                    | "ethernet64"
-                                    | "ethernet68"
-                                    | "ethernet72"
-                                    | "ethernet76"
-                                    | "ethernet80"
-                                    | "ethernet84"
-                                    | "ethernet88"
-                                    | "ethernet92"
-                                    | "ethernet96",
-                                );
-                                setEthernet(
-                                  interfaceName,
-                                  selectedInterface.value
-                                );
-                              }}
+      <div className="interface-2">
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            {interfaceNames.map((interfaceName, index) => (
+              <div key={index} className="flex justify-start">
+                <FormField
+                  control={form.control}
+                  name={
+                    interfaceName as
+                      | "ethernet0"
+                      | "ethernet4"
+                      | "ethernet8"
+                      | "ethernet12"
+                      | "ethernet16"
+                      | "ethernet20"
+                      | "ethernet24"
+                      | "ethernet28"
+                      | "ethernet32"
+                      | "ethernet36"
+                      | "ethernet40"
+                      | "ethernet44"
+                      | "ethernet48"
+                      | "ethernet52"
+                      | "ethernet56"
+                      | "ethernet60"
+                      | "ethernet64"
+                      | "ethernet68"
+                      | "ethernet72"
+                      | "ethernet76"
+                      | "ethernet80"
+                      | "ethernet84"
+                      | "ethernet88"
+                      | "ethernet92"
+                      | "ethernet96"
+                  }
+                  render={({ field }) => (
+                    <FormItem className="flex flex-col">
+                      <FormLabel>ethernet1/1/{index}</FormLabel>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <FormControl>
+                            <Button
+                              variant="outline"
+                              role="combobox"
+                              className={cn(
+                                "w-[400px] justify-between",
+                                !field.value && "text-muted-foreground"
+                              )}
                             >
                               {field.value
                                 ? interfaces.find(
@@ -430,12 +347,54 @@ export function InterfaceMappings() {
                                         | "ethernet0"
                                         | "ethernet4"
                                         | "ethernet8"
-                                        | "ethernet12",
+                                        | "ethernet12"
+                                        | "ethernet16"
+                                        | "ethernet20"
+                                        | "ethernet24"
+                                        | "ethernet28"
+                                        | "ethernet32"
+                                        | "ethernet36"
+                                        | "ethernet40"
+                                        | "ethernet44"
+                                        | "ethernet48"
+                                        | "ethernet52"
+                                        | "ethernet56"
+                                        | "ethernet60"
+                                        | "ethernet64"
+                                        | "ethernet68"
+                                        | "ethernet72"
+                                        | "ethernet76"
+                                        | "ethernet80"
+                                        | "ethernet84"
+                                        | "ethernet88"
+                                        | "ethernet92"
+                                        | "ethernet96",
                                       selectedInterface.value as
                                         | "ethernet0"
                                         | "ethernet4"
                                         | "ethernet8"
                                         | "ethernet12"
+                                        | "ethernet16"
+                                        | "ethernet20"
+                                        | "ethernet24"
+                                        | "ethernet28"
+                                        | "ethernet32"
+                                        | "ethernet36"
+                                        | "ethernet40"
+                                        | "ethernet44"
+                                        | "ethernet48"
+                                        | "ethernet52"
+                                        | "ethernet56"
+                                        | "ethernet60"
+                                        | "ethernet64"
+                                        | "ethernet68"
+                                        | "ethernet72"
+                                        | "ethernet76"
+                                        | "ethernet80"
+                                        | "ethernet84"
+                                        | "ethernet88"
+                                        | "ethernet92"
+                                        | "ethernet96"
                                     );
                                     setEthernet(
                                       interfaceName,
@@ -466,7 +425,7 @@ export function InterfaceMappings() {
             ))}
 
             <div className="flex justify-start">
-              <Button type="submit">Submit</Button>
+              <Button className='btn-1' type="submit">Submit</Button>
             </div>
           </form>
         </Form>

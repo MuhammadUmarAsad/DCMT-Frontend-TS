@@ -22,28 +22,48 @@ import { toast } from "@/components/ui/use-toast";
 
 const items = [
   {
-    id: "recents",
-    label: "Recents",
+    id: "vlan",
+    label: "VLAN",
   },
   {
-    id: "home",
-    label: "Home",
+    id: "port-channel",
+    label: "Port-Channel",
   },
   {
-    id: "applications",
-    label: "Applications",
+    id: "interface",
+    label: "Interface",
   },
   {
-    id: "desktop",
-    label: "Desktop",
+    id: "breakout-port",
+    label: "Breakout-Port",
   },
   {
-    id: "downloads",
-    label: "Downloads",
+    id: "lldp",
+    label: "LLDP",
   },
   {
-    id: "documents",
-    label: "Documents",
+    id: "snpm",
+    label: "SNPM",
+  },
+  {
+    id: "icmb",
+    label: "ICMB",
+  },
+  {
+    id: "evpn",
+    label: "E-VPN",
+  },
+  {
+    id: "vpn",
+    label: "VPN",
+  },
+  {
+    id: "bgp",
+    label: "BGP",
+  },
+  {
+    id: "mac vlan",
+    label: "Mac-VLAN",
   },
 ] as const;
 
@@ -112,7 +132,9 @@ export function ProtocolSelection() {
               render={() => (
                 <FormItem>
                   <div className="mb-4">
-                    <FormLabel className="text-base">Protocol Selection</FormLabel>
+                    <FormLabel className="text-base">
+                      Protocol Selection
+                    </FormLabel>
                     <FormDescription>
                       Select the Protocols you want to convert.
                     </FormDescription>
@@ -154,7 +176,9 @@ export function ProtocolSelection() {
                 </FormItem>
               )}
             />
-            <Button className='btn-1' type="submit">Submit</Button>
+            <Button className="btn-1" type="submit">
+              <a href="/protocolselection">Next</a>
+            </Button>
           </form>
         </Form>
       </div>
