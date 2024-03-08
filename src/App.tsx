@@ -3,8 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css';
 import { CardWithForm } from './jjs';
-import { startMigration } from './layouts/start-migration';
+import { StartMigration } from './layouts/start-migration';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from './layouts/header';
 
 
 function App() {
@@ -12,10 +13,10 @@ function App() {
 
   return (
     <>
-    {/* <Style/>     */}
+    <Header/>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<startMigration/>} />
+        <Route path="/" element={<StartMigration/>} />
         {/* {/* <Route path="/blogs" element={<></>} /> */}
         {/* <Route path="/contact" element={<ComboboxForm/>} /> */}
         {/* <Route path="*" element={<></>} /> */}
