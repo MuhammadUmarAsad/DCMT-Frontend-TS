@@ -51,84 +51,16 @@ const interfaces = [
   { value: "ethernet84", label: "Ethernet84" },
   { value: "ethernet88", label: "Ethernet88" },
   { value: "ethernet92", label: "Ethernet92" },
+  { value: "ethernet96", label: "Ethernet96" },
 ];
-// const statuses: Status[] = [
-//   {
-//     value: "backlog",
-//     label: "Backlog",
-//   },
-//   {
-//     value: "todo",
-//     label: "Todo",
-//   },
-//   {
-//     value: "in progress",
-//     label: "In Progress",
-//   },
-//   {
-//     value: "done",
-//     label: "Done",
-//   },
-//   {
-//     value: "canceled",
-//     label: "Canceled",
-//   },
-// ];
 
-// export function InterfaceMappings() {
-//   const [open0, setOpen0] = React.useState(false);
-//   const [selectedStatus0, setSelectedStatus0] = React.useState<Status | null>(
-//     null
-//   );
-
-//   return (
-//     <div>
-//     <div className="flex items-center space-x-4">
-//       <p className="text-sm text-muted-foreground">Status</p>
-//       <Popover open={open0} onOpenChange={setOpen0}>
-//         <PopoverTrigger asChild>
-//           <Button variant="outline" className="w-[150px] justify-start">
-//             {selectedStatus0 ? <>{selectedStatus0.label}</> : <>+ Set status</>}
-//           </Button>
-//         </PopoverTrigger>
-//         <PopoverContent className="p-0" side="right" align="start">
-//           <Command>
-//             <CommandInput placeholder="Change status..." />
-//             <CommandList>
-//               <CommandEmpty>No results found.</CommandEmpty>
-//               <CommandGroup>
-//                 {statuses.map((status) => (
-//                   <CommandItem
-//                     key={status.value}
-//                     value={status.value}
-//                     onSelect={(value) => {
-//                       setSelectedStatus0(
-//                         statuses.find((priority) => priority.value === value) ||
-//                           null
-//                       );
-//                       setOpen0(false);
-//                     }}
-//                   >
-//                     {status.label}
-//                   </CommandItem>
-//                 ))}
-//               </CommandGroup>
-//             </CommandList>
-//           </Command>
-//         </PopoverContent>
-//       </Popover>
-//     </div>
-
-//     </div>
-//   );
-// }
 
 ("use client");
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { string, z } from "zod";
 
 import { cn } from "@/lib/utils";
 
@@ -143,81 +75,84 @@ import {
 } from "@/components/ui/form";
 import { toast } from "@/components/ui/use-toast";
 
+
 const FormSchema = z.object({
-  ethernet0: z.enum(["ethernet0"], {
+  ethernet0: z.string({
     required_error: "Please select the interface0.",
   }),
-  ethernet4: z.enum(["ethernet4"], {
+  ethernet4: z.string({
     required_error: "Please select the interface4.",
   }),
-  ethernet8: z.enum(["ethernet8"], {
-    required_error: "Please select the interface8.",
+  ethernet8: z.string({
+    required_error: "Please select the interface.",
   }),
-  ethernet12: z.enum(["ethernet12"], {
-    required_error: "Please select the interface12.",
+  ethernet12: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet16: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet20: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet24: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet28: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet32: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet36: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet40: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet44: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet48: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet52: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet56: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet60: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet64: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet68: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet72: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet76: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet80: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet84: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet88: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet92: z.string({
+    required_error: "Please select the interface.",
+  }),
+  ethernet96: z.string({
+    required_error: "Please select the interface.",
   }),
 });
-
-// const FormSchema = z.object({
-//     ethernet0: z.string({
-//     required_error: "Please select the interface0.",
-//   }),
-//   ethernet4: z.string({
-//     required_error: "Please select the interface4.",
-//   }),
-//   ethernet8: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet12: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet16: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet20: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet24: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet28: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet32: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet36: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet40: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet44: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet48: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet52: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet56: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet60: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet64: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet68: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-//   ethernet72: z.string({
-//     required_error: "Please select the interface.",
-//   }),
-
-// })
 
 export function InterfaceMappings() {
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -260,7 +195,7 @@ export function InterfaceMappings() {
     "ethernet84",
     "ethernet88",
     "ethernet92",
-    "ethernet96" /* add more interface names as needed */,
+    "ethernet96"  /* add more interface names as needed */,
   ];
 
   const [ethernet0, setEthernet0] = useState("");
@@ -341,12 +276,37 @@ export function InterfaceMappings() {
           <div key={index} className="flex justify-start">
             <FormField
               control={form.control}
-            name={
-                interfaceName as "ethernet0" | "ethernet4" | "ethernet8" | "ethernet12"
-            }
+              name={
+                interfaceName as
+                  | "ethernet0"
+                  | "ethernet4"
+                  | "ethernet8"
+                  | "ethernet12"
+                  | "ethernet16"
+                  | "ethernet20"
+                  | "ethernet24"
+                  | "ethernet28"
+                  | "ethernet32"
+                  | "ethernet36"
+                  | "ethernet40"
+                  | "ethernet44"
+                  | "ethernet48"
+                  | "ethernet52"
+                  | "ethernet56"
+                  | "ethernet60"
+                  | "ethernet64"
+                  | "ethernet68"
+                  | "ethernet72"
+                  | "ethernet76"
+                  | "ethernet80"
+                  | "ethernet84"
+                  | "ethernet88"
+                  | "ethernet92"
+                  | "ethernet96"
+              }
               render={({ field }) => (
                 <FormItem className="flex flex-col">
-                  <FormLabel>ethernet0/0/{index}</FormLabel>
+                  <FormLabel>ethernet1/1/{index}</FormLabel>
                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
@@ -382,16 +342,58 @@ export function InterfaceMappings() {
                               key={selectedInterface.value}
                               onSelect={() => {
                                 form.setValue(
-                                  interfaceName as
+                                    interfaceName as
                                     | "ethernet0"
                                     | "ethernet4"
                                     | "ethernet8"
-                                    | "ethernet12",
+                                    | "ethernet12"
+                                    | "ethernet16"
+                                    | "ethernet20"
+                                    | "ethernet24"
+                                    | "ethernet28"
+                                    | "ethernet32"
+                                    | "ethernet36"
+                                    | "ethernet40"
+                                    | "ethernet44"
+                                    | "ethernet48"
+                                    | "ethernet52"
+                                    | "ethernet56"
+                                    | "ethernet60"
+                                    | "ethernet64"
+                                    | "ethernet68"
+                                    | "ethernet72"
+                                    | "ethernet76"
+                                    | "ethernet80"
+                                    | "ethernet84"
+                                    | "ethernet88"
+                                    | "ethernet92"
+                                    | "ethernet96",
                                   selectedInterface.value as
                                     | "ethernet0"
                                     | "ethernet4"
                                     | "ethernet8"
                                     | "ethernet12"
+                                    | "ethernet16"
+                                    | "ethernet20"
+                                    | "ethernet24"
+                                    | "ethernet28"
+                                    | "ethernet32"
+                                    | "ethernet36"
+                                    | "ethernet40"
+                                    | "ethernet44"
+                                    | "ethernet48"
+                                    | "ethernet52"
+                                    | "ethernet56"
+                                    | "ethernet60"
+                                    | "ethernet64"
+                                    | "ethernet68"
+                                    | "ethernet72"
+                                    | "ethernet76"
+                                    | "ethernet80"
+                                    | "ethernet84"
+                                    | "ethernet88"
+                                    | "ethernet92"
+                                    | "ethernet96",
                                 );
                                 setEthernet(
                                   interfaceName,
